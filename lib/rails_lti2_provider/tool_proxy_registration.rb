@@ -83,7 +83,7 @@ module RailsLti2Provider
         else
           shared_secret = tool_proxy.security_contract.shared_secret
         end
-        tp = Tool.create!(shared_secret: shared_secret, account_id: registration.account_id, uuid: registered_proxy.tool_proxy_guid, tool_settings: tool_proxy.as_json, lti_version: tool_proxy.lti_version)
+        tp = Tool.create!(shared_secret: shared_secret, uuid: registered_proxy.tool_proxy_guid, tool_settings: tool_proxy.as_json, lti_version: tool_proxy.lti_version)
         registration.update(workflow_state: 'registered', tool: tp)
         {
             tool_proxy_uuid: tool_proxy.tool_proxy_guid,
