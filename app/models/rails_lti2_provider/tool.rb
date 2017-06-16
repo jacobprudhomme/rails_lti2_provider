@@ -5,8 +5,6 @@ module RailsLti2Provider
     has_many :lti_launches
     has_many :registrations
 
-    belongs_to :account, class_name: 'Account', foreign_key: 'account_id'
-
     def tool_proxy
       IMS::LTI::Models::ToolProxy.from_json(tool_settings)
     end
