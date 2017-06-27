@@ -119,7 +119,9 @@ module RailsLti2Provider
             {
                 resource_type: {code: handler['code']},
                 resource_name: handler['name'],
-                message: messages(handler['messages'])
+                description: handler['description'],
+                message: messages(handler['messages']),
+                icon_info: handler['icon']
             }
         )
       end
