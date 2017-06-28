@@ -14,7 +14,8 @@ module RailsLti2Provider
     end
 
     def disable_xframe_header
-      response.headers.except! 'X-Frame-Options'
+      response.headers["X-FRAME-OPTIONS"] = 'ALLOWALL'
+      #response.headers.except! 'X-Frame-Options'
     end
 
     def registration_request
